@@ -11,7 +11,7 @@ class WebController extends Controller
     //
     public function productItem() {
         
-        $product = Product::all();
+        $product = Product::paginate(3);
 
         return view('home', ['product' => $product]);
     }

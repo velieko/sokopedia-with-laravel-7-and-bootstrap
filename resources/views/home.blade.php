@@ -1,26 +1,19 @@
 @extends('master')
 
 @section('content')  
-<div class="card">      
-    <div class="card-body" style="background: WhiteSmoke;">
-      <h4 class="card-title">Products</h4>
-      <table class="table">
-        <thread>
-          <tr >
-              <th>Product</th>
-              <th>Price</th>
-          </tr>
-        </thread>            
-          <tbody>
-            @foreach($product as $temp)
-            <tr> 
-              <td>{{$temp->name}}</td>
-              <td>{{$temp->price}}</td>
-            </tr>                    
-            @endforeach
-          </tbody>
-      </table>      
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="container">
+  <div class="row-fluid">
+    @foreach ($product as $temp)
+    <div class="card" style="width: 18rem; display:inline-block;">
+      <img class="card-img-top" src="{{ asset('Pictures/'.$temp->image) }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{$temp->name}}</h5>
+        <p class="card-text">{{$temp->price}}</p>
+        <a href="#" class="btn btn-primary">Product Detail</a>
+      </div>
     </div>
-  </div>
-  @endsection
+    @endforeach    
+  </div>  
+  <div class="d-flex justify-content-center">{{$product->withQueryString()->links()}}</div> 
+</div>
+@endsection 
