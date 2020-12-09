@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@productItem');
+Route::get('product/{id}', [
+    'uses' => 'ProductController@index',
+    'as' => 'product'
+]);
