@@ -13,6 +13,14 @@ class WebController extends Controller
         
         $product = Product::paginate(3);
 
-        return view('home', ['product' => $product]);
+        return view('homepage', ['product' => $product]);
+    }
+
+    public function registerMenu() {
+        return view('register');
+    }
+
+    public function loginMenu() { 
+        return view('login');
     }
 }

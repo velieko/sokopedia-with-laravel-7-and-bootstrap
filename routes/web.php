@@ -14,3 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@productItem');
+Route::get('/homepage', 'WebController@productItem')->name('home');
+Route::get('/register', 'WebController@registerMenu');
+Route::get('/login', 'WebController@loginMenu');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
