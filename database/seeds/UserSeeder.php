@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -16,25 +17,25 @@ class UserSeeder extends Seeder
         'role' => 'Admin',
         'name'=> 'Velieko',
         'email'=> 'velieko@sokopedia.com',
-        'password'=> '12345'
+        'password'=> Hash::make('12345')
         ]);
         \App\User::create([
             'role' => 'Admin',
             'name'=> 'Marcel',
             'email'=> 'marcel@sokopedia.com',
-            'password'=> '45678'
+            'password'=> Hash::make('45678')
         ]);
         \App\User::create([
             'role' => 'User',
             'name'=> 'user1',
             'email'=> 'user1@sokopedia.com',
-            'password'=> '12345'
+            'password'=> Hash::make('12345')
         ]);
         \App\User::create([
             'role' => 'User',
             'name'=> 'user2',
             'email'=> 'user2@sokopedia.com',
-            'password'=> '45678'
+            'password'=> Hash::make('45678')
         ]);
 
     }

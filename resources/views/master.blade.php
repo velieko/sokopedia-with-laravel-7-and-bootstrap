@@ -7,8 +7,8 @@
 
     <title>@yield('title')</title>
 </head>
-<body style="background: OldLace">
-    <div class="container-fluid" style="background: White; text-aligh: center;">
+<body>
+    <div class="container-fluid" style="background: White; text-align: center;">
         <div class="row d-flex align-items-center" >
             <div class="col-2">
                 <a href="{{ url('/') }}">

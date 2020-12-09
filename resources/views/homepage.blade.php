@@ -1,5 +1,5 @@
 @extends('master')
-
+@section('title','$okopedia')
 @section('content')  
 <div class="container">
   <div class="row-fluid">
