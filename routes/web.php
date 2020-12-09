@@ -14,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@productItem');
+<<<<<<< HEAD
 Route::get('product/{id}', [
     'uses' => 'ProductController@index',
     'as' => 'product'
 ]);
+=======
+Route::get('/homepage', 'WebController@productItem')->name('home');
+Route::get('/register', 'WebController@registerMenu');
+Route::get('/login', 'WebController@loginMenu');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> a31d39694bbd5e65eeaecf9f49cc747baf36423c
