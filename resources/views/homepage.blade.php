@@ -8,12 +8,12 @@
       <img class="card-img-top" src="{{ asset('Pictures/'.$temp->image) }}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{$temp->name}}</h5>
-        <p class="card-text">{{$temp->price}}</p>
-        <a href="#" class="btn btn-primary">Product Detail</a>
+        <p class="card-text">IDR {{$temp->price}}</p>
+        <a href="{{ route('product', ['id' => $temp->product_id]) }}" class="btn btn-primary">Product Detail</a>
       </div>
     </div>
     @endforeach    
   </div>  
-  <div class="d-flex justify-content-center">{{$product->withQueryString()->links()}}</div> 
+  <div class="d-flex justify-content-center mt-5" >{{$product->withQueryString()->links()}}</div> 
 </div>
 @endsection 

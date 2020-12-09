@@ -22,13 +22,6 @@
                     <input type="submit" value="Search">
                 </form>
             </div>
-<<<<<<< HEAD
-            <div class="col2">
-                <a href="{{ url('/') }}" class="btn btn-outline-dark" style="background: WhiteSmoke; color: black;">Login</a>
-            </div>
-            <div class="col2 ml-2">
-                <a href="{{ url('/') }}" class="btn btn-outline-dark" style="background: WhiteSmoke; color: black;">Register</a>
-=======
             <div class="col-2">
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
@@ -61,7 +54,6 @@
                         </li>
                     @endguest
                 </ul>
->>>>>>> a31d39694bbd5e65eeaecf9f49cc747baf36423c
             </div>
         </div>
         @yield('content')
