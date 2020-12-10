@@ -19,7 +19,11 @@
                 {{$product->description}}
                 </p>
                 <div class="col2">
-                <a href="{{ route('addtocart', ['id' => $product->product_id]) }}" class="btn" style="background: Green; color: white;">Add to cart</a>
+                    <form action="/action_page.php">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity">                        
+                    </form>
+                <a href="#" class="btn" style="background: Green; color: white;">Add to cart</a>
                 </div>
             </div>
            

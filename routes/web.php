@@ -18,6 +18,10 @@ Route::get('product/{id}', [
     'uses' => 'ProductController@index',
     'as' => 'product'
 ]);
+Route::get('addtocart/{id}', [
+    'uses' => 'ProductController@indexCart',
+    'as' => 'addtocart'
+]);
 Route::get('/homepage', 'WebController@productItem')->name('home');
 Route::get('/register', 'WebController@registerMenu');
 Route::get('/login', 'WebController@loginMenu');
