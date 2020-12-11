@@ -25,6 +25,7 @@ Route::get('addtocart/{id}', [
 Route::get('/homepage', 'WebController@productItem')->name('home');
 Route::get('/register', 'WebController@registerMenu');
 Route::get('/login', 'WebController@loginMenu');
+Route::post('/addtocart/{id}/success', 'ProductController@addItem');
 
 Auth::routes();
 

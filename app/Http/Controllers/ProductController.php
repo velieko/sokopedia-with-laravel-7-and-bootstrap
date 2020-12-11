@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cart;
 
 class ProductController extends Controller
 {
@@ -24,6 +25,22 @@ class ProductController extends Controller
         $product = \App\Product::where('product_id','=',$id)->first();
         return view('addtocart',['product'=>$product]);
     }
+
+    public function addItem($id, Request $request)
+    {
+
+        $this->validate($request,[    		
+    		'quantity' => 'required'
+        ]);
+        
+        Cart::create([
+            'product_id' => $id,
+            'quantity' => $request->quantity
+        ]);
+
+        return redirect('/');
+    }
+    
 
     /**
      * Show the form for creating a new resource.

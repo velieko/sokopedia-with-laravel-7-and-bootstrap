@@ -19,11 +19,12 @@
                 {{$product->description}}
                 </p>
                 <div class="col2">
-                    <form action="/action_page.php">
+                    <form method="POST" action="/addtocart/{{$product->product_id}}/success">
+                        {{ csrf_field() }}
                         <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" name="quantity">                        
-                    </form>
-                <a href="#" class="btn" style="background: Green; color: white;">Add to cart</a>
+                        <input type="number" name="quantity">
+                        <input type="submit" value="Add to cart" class="btn" style="background: Green; color: white;">                        
+                    </form>                
                 </div>
             </div>
            
