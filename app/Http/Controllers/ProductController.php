@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
+use App\Category;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -26,6 +28,36 @@ class ProductController extends Controller
         return view('addtocart',['product'=>$product]);
     }
 
+    public function addProduct()
+    {
+        $category = Category::all();      
+        return view('product_add',['category' => $category]);
+    }
+
+    public function addProductSuccess(Request $request)
+    {
+        $category = Category::all();
+
+        $this->validate($request,[    		
+            'name' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'image' => 'required'
+        ]);
+
+        Product::create([
+            'name' => $request->name,            
+            'description' => $request->description,
+            'price' => $request->price,
+            'image' => $request->image,
+            'category_id' => $request->category
+        ]);
+              
+        // return view('product_add',['category' => $category]);
+        return redirect('/');
+    }
+
     public function addItem($id, Request $request)
     {
 
@@ -33,7 +65,7 @@ class ProductController extends Controller
     		'quantity' => 'required'
         ]);
         
-        Cart::create([
+        Product::create([
             'product_id' => $id,
             'quantity' => $request->quantity
         ]);
