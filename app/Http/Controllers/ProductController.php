@@ -72,6 +72,22 @@ class ProductController extends Controller
 
         return redirect('/');
     }
+
+    public function productList() {
+        $product = Product::all();
+        
+
+        return view('product_list', ['product' => $product]);
+    }
+
+    public function productDelete($id) {
+
+        $product = Product::find($id);
+        $product->delete();        
+
+
+        return redirect('admin/product_list');
+    }
     
 
     /**

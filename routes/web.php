@@ -28,6 +28,8 @@ Route::get('/login', 'WebController@loginMenu');
 Route::post('/addtocart/{id}/success', 'ProductController@addItem');
 Route::get('/admin/add_product','ProductController@addProduct');
 Route::post('/admin/add_product/success','ProductController@addProductSuccess');
+Route::get('/admin/product_list','ProductController@productList');
+Route::get('/admin/product_list/delete/{id}','ProductController@productDelete');
 
 Auth::routes();
 
