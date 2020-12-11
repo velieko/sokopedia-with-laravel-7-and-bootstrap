@@ -54,8 +54,8 @@ class ProductController extends Controller
             'category_id' => $request->category
         ]);
               
-        // return view('product_add',['category' => $category]);
-        return redirect('/');
+        return view('product_add',['category' => $category]);
+        // return redirect('/');
     }
 
     public function addItem($id, Request $request)

@@ -30,6 +30,10 @@ Route::get('/admin/add_product','ProductController@addProduct');
 Route::post('/admin/add_product/success','ProductController@addProductSuccess');
 Route::get('/admin/product_list','ProductController@productList');
 Route::get('/admin/product_list/delete/{id}','ProductController@productDelete');
+Route::get('/admin/add_category','CategoryController@addCategory');
+Route::post('/admin/add_category/success','CategoryController@addCategorySuccess');
+Route::get('/admin/category_list','CategoryController@categoryList');
+
 
 Auth::routes();
 
