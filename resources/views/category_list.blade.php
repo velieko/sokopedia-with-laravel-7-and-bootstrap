@@ -3,7 +3,6 @@
 @section('content')  
 <div class="container">  
     <h1>Category</h1> 
-
     @foreach ($category as $temp)
     <div id="accordion">
         <div class="card">
@@ -43,8 +42,6 @@
             </div>
         </div>        
     </div>
-    @endforeach
-
-    
+    @endforeach    
 </div>
 @endsection 

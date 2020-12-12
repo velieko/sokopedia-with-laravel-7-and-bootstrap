@@ -23,6 +23,18 @@
                 </form>
             </div>
             <div class="col-2">
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{ url('admin/product_list')}}">Product List</a>
+                    <a class="dropdown-item" href="{{ url('admin/add_product')}}">Add Product</a>
+                    <a class="dropdown-item" href="{{ url('admin/category_list')}}">Category List</a>
+                    <a class="dropdown-item" href="{{ url('admin/add_category')}}">Add Category</a>
+                </div>
+            </div>
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
