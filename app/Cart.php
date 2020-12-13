@@ -9,7 +9,7 @@ class Cart extends Model
     //
     protected $fillable = ['product_id', 'quantity'];
     public function product(){
-        return $this->hasMany('App\Product', 'product_id');
+        return $this->belongsTo('App\Product', 'product_id');
     }    
     public function transaction(){
         return $this->belongsTo('App\Transaction', 'product_id');

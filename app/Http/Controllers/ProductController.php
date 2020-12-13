@@ -91,9 +91,7 @@ class ProductController extends Controller
 
     public function cartList()
     {
-        $cart = Cart::all();       
-
-        // return view('homepage', ['product' => $product]);
+        $cart = Cart::all(); 
 
         return view('cart', ['cart' => $cart]);
     }
