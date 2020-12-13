@@ -17,7 +17,7 @@
             </div>
             <div class="col-8">
                 <form>
-                    <input type="text" name="search" placeholder="Search" style="width: 800px;">
+                    <input type="text" name="search" placeholder="Search" style="width: 700px;">
                     
                     <input type="submit" value="Search">
                 </form>
@@ -35,16 +35,17 @@
                     <a class="dropdown-item" href="{{ url('admin/add_category')}}">Add Category</a>
                 </div>
             </div>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-1 list-group list-group-horizontal">
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
                     <a class="btn btn-outline-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
+                    &nbsp;&nbsp;
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="btn btn-outline-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
                     @endif
                     
                     @else
@@ -53,6 +54,11 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="#"> 
+                                Admin Panel
+                            </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
