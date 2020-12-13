@@ -65,7 +65,7 @@ class ProductController extends Controller
     		'quantity' => 'required'
         ]);
         
-        Product::create([
+        Cart::create([
             'product_id' => $id,
             'quantity' => $request->quantity
         ]);
