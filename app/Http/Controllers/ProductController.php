@@ -88,6 +88,15 @@ class ProductController extends Controller
 
         return redirect('admin/product_list');
     }
+
+    public function cartList()
+    {
+        $cart = Cart::all();       
+
+        // return view('homepage', ['product' => $product]);
+
+        return view('cart', ['cart' => $cart]);
+    }
     
 
     /**

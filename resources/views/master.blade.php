@@ -15,14 +15,16 @@
                     <img src="{{ asset('Pictures/logo.png') }}" style="height: 80px;">    
                 </a>
             </div>
-            <div class="col-8">
-                <form>
-                    <input type="text" name="search" placeholder="Search" style="width: 700px;">
-                    
-                    <input type="submit" value="Search">
+            <div class="col-6">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 600px;">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-            <div class="col-2">
+
+            <div class="col1">
+                <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
+            </div>
 
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

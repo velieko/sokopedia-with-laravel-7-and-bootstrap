@@ -33,6 +33,7 @@ Route::get('/admin/product_list/delete/{id}','ProductController@productDelete');
 Route::get('/admin/add_category','CategoryController@addCategory');
 Route::post('/admin/add_category/success','CategoryController@addCategorySuccess');
 Route::get('/admin/category_list','CategoryController@categoryList');
+Route::get('/cart','ProductController@cartList');
 
 
 Auth::routes();
