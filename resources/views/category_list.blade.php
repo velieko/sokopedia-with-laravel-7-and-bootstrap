@@ -13,7 +13,7 @@
                 </button>
             </h5>
             </div>
-            {{ $temp->product}}
+          
             
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">

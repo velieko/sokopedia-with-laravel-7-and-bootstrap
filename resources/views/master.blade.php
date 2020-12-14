@@ -15,14 +15,14 @@
                     <img src="{{ asset('Pictures/logo.png') }}" style="height: 80px;">    
                 </a>
             </div>
-            <div class="col-6">
+            <div class="col-6 ">
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 600px;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
 
-            <div class="col1">
+            <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
 
@@ -57,7 +57,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" href="#"> 
+                            <a class="dropdown-item" href="{{ url('admin/admin') }}"> 
                                 Admin Panel
                             </a>
 
