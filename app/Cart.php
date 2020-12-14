@@ -8,6 +8,7 @@ class Cart extends Model
 {
     //
     protected $fillable = ['product_id', 'quantity'];
+    protected $primaryKey = 'cart_id';
     public function product(){
         return $this->belongsTo('App\Product', 'product_id');
     }    

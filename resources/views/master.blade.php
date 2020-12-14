@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class="container-fluid" style="background: White; text-align: center;">
+    <div class="container-fluid " style="background: White; text-align: center;">
         <div class="row d-flex align-items-center" >
             <div class="col-2">
                 <a href="{{ url('/') }}">
@@ -26,7 +26,7 @@
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
 
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Admin
                 </button>
@@ -36,7 +36,7 @@
                     <a class="dropdown-item" href="{{ url('admin/category_list')}}">Category List</a>
                     <a class="dropdown-item" href="{{ url('admin/add_category')}}">Add Category</a>
                 </div>
-            </div>
+            </div> -->
                 <ul class="navbar-nav ml-1 list-group list-group-horizontal">
                     <!-- Authentication Links -->
                     @guest

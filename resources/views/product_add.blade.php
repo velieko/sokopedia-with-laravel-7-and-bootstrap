@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin')
 @section('title','$okopedia')
 @section('content')  
 <div class="container">  

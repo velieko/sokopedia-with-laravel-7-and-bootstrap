@@ -11,8 +11,37 @@
         <h5 class="card-title">{{$temp->product->name}}</h5>
         <p class="card-text">Product Price : IDR {{$temp->product->price}}</p>
         <p class="card-text">Quantity : {{$temp->quantity}}</p>     
-        <a href="" class="btn btn-primary">Delete</a>
-        <a href="" class="btn btn-primary">Edit</a>
+        <a href="{{ url('cart/delete/'.$temp->cart_id) }}" class="btn btn-primary">Delete</a>
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</a>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="POST" action="/cart/edit/{{$temp->cart_id}}/success">
+                  {{ csrf_field() }}    
+                  {{ method_field('PUT') }}              
+                  <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="text" class="form-control" name="quantity" placeholder="Input Quantity...">
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary">
+                      </div>
+                  </div>
+              </form> 
+              </div>              
+            </div>
+          </div>
+        </div>
+
       </div> 
         
     </div>

@@ -96,6 +96,27 @@ class ProductController extends Controller
         return view('cart', ['cart' => $cart]);
     }
     
+    public function cartDelete($id)
+    {
+        $cart = Cart::find($id);
+        $cart->delete();        
+
+
+        return redirect('/cart');
+    }
+
+    public function editCart($id, Request $request)
+    {
+        $this->validate($request,[    		
+    		'quantity' => 'required'
+        ]);
+        
+        $cart = Cart::find($id);
+        $cart->quantity = $request->quantity; 
+        $cart->save();
+
+        return redirect('/cart');
+    }
 
     /**
      * Show the form for creating a new resource.
