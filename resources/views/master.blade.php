@@ -25,6 +25,9 @@
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
+            <div class="col-1">
+                <a class="btn btn-primary" href="{{ url('/history') }}" role="button">History</a>
+            </div>
 
             <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,6 +40,7 @@
                     <a class="dropdown-item" href="{{ url('admin/add_category')}}">Add Category</a>
                 </div>
             </div> -->
+            <div class="col-1">
                 <ul class="navbar-nav ml-1 list-group list-group-horizontal">
                     <!-- Authentication Links -->
                     @guest
@@ -74,6 +78,7 @@
                         </li>
                     @endguest
                 </ul>
+            </div>
             </div>
         </div>
         @yield('content')

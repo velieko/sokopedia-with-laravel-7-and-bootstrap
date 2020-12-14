@@ -11,7 +11,7 @@ class Transaction extends Model
     //
 
     public function history(){
-        return $this->hasMany('App\History');
+        return $this->hasMany('App\History','transaction_id');
     }
     public function cart(){
         return $this->hasMany('App\Cart');

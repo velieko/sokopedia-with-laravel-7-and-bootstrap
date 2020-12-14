@@ -47,6 +47,17 @@ Route::get('/admin/admin', 'AdminController@index');
 Route::get('/cart','ProductController@cartList');
 
 
+
+Route::get('/history','HistoryController@index');
+
+Route::get('transactiondetails/{id}', [
+    'uses' => 'TransactionController@index',
+    'as' => 'transactiondetails'
+]);
+
+Route::post('/checkoutproduct/{id1}/checkoutcart/{id2}/success', 'HistoryController@store');
+
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
