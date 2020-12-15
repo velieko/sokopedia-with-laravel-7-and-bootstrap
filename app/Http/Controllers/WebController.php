@@ -24,4 +24,12 @@ class WebController extends Controller
     public function loginMenu() { 
         return view('login');
     }
+
+    public function searchItem(Request $request) { 
+
+        $auth = Auth::check();
+        $product = Product::where('name', 'like', "%".$request->search."%")->paginate(3);       
+
+        return view('homepage', ['product' => $product, 'auth'=>$auth]);
+    }
 }

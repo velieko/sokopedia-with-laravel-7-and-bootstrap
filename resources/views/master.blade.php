@@ -16,13 +16,14 @@
                 </a>
             </div>
             <div class="col-6 ">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+                <form action="/homepage/search" class="form-inline">
+                    {{ csrf_field() }}
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="width: 500px;" name= "search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
             
-            @if(auth())
+            @if(Auth::check())
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
@@ -31,6 +32,7 @@
                 <a class="btn btn-primary" href="{{ url('/history') }}" role="button">History</a>
             </div>
             @endif
+            
  
             <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,7 +66,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                            @if(auth() && Illuminate\Support\Facades\Auth::user()->role == 'Admin')
+                            @if(Auth::check() && Illuminate\Support\Facades\Auth::user()->role == 'Admin')
                             <a class="dropdown-item" href="{{ url('admin/admin') }}"> 
                                 Admin Panel
                             </a>

@@ -22,7 +22,9 @@ Route::get('addtocart/{id}', [
     'uses' => 'ProductController@indexCart',
     'as' => 'addtocart'
 ])->middleware('product');
+
 Route::get('/homepage', 'WebController@productItem')->name('home');
+Route::get('/homepage/search', 'WebController@searchItem');
 Route::get('/register', 'WebController@registerMenu');
 Route::get('/login', 'WebController@loginMenu');
 
