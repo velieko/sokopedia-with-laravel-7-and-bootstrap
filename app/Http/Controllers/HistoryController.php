@@ -40,19 +40,18 @@ class HistoryController extends Controller
     public function store($id1, $id2, Request $request)
     {
         //
-
         $this->validate($request,[    		
-            'product_id' => 'required',
-            'quantity' => 'required'
+    		'quantity' => 'required'
         ]);
 
         History::create([
-            'product_id' => $request->id1,            
-            'quantity' => $request->quantity,
+            'product_id' => $id1,            
+            'quantity' => $request->quantity            
         ]);
         $cart = Cart::find($id2);
-        $cart->delete();         
-        return view('/home');
+        $cart->delete();  
+               
+        return redirect('/cart');
     }
 
     /**

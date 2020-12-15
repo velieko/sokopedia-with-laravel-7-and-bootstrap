@@ -14,7 +14,11 @@
         Quantity : {{$temp->quantity}}</p>     
         <a href="{{ url('cart/delete/'.$temp->cart_id) }}" class="btn btn-primary">Delete</a>
         <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</a>
+        {{$temp->product->quantity}}
+
         <form method="POST" action="/checkoutproduct/{{$temp->product->product_id}}/checkoutcart/{{$temp->cart_id}}/success">
+          {{ csrf_field() }}
+          <input type="hidden" id="quantity" name="quantity" value="{{$temp->quantity}}">
           <input type="submit" value="Checkout" class="btn mt-1" style="background:red ; color: white;">    
         </form>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,6 +48,8 @@
             </div>
           </div>
         </div>
+
+        
 
       </div> 
         
