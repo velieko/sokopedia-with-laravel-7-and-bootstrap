@@ -21,14 +21,15 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-
+            
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
+
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/history') }}" role="button">History</a>
             </div>
-
+ 
             <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Admin
