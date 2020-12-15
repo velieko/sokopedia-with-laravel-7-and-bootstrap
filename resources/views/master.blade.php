@@ -22,6 +22,7 @@
                 </form>
             </div>
             
+            @if(auth())
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/cart') }}" role="button">Cart</a>
             </div>
@@ -29,6 +30,7 @@
             <div class="col-1">
                 <a class="btn btn-primary" href="{{ url('/history') }}" role="button">History</a>
             </div>
+            @endif
  
             <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,9 +64,11 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                            @if(auth() && Illuminate\Support\Facades\Auth::user()->role == 'Admin')
                             <a class="dropdown-item" href="{{ url('admin/admin') }}"> 
                                 Admin Panel
                             </a>
+                            @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
