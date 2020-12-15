@@ -7,7 +7,7 @@
             <div class="col-3">
             @foreach($history as $temp)
                 @foreach($temp->product as $product)
-                <img src="{{ asset('Pictures/'.$product->image) }}" style="width:18rem;;">
+                <img src="{{ asset('Pictures/'.$product->image) }}" style="width:18rem;">
                 </div>
                 <div class="col-3 mt-4">
                     <h5>
@@ -19,7 +19,7 @@
                 </div>
                 @endforeach
                 <p>
-                    {{$history->quantity}}
+                {{$temp->quantity}}
                 </p>
             @endforeach
         </div>

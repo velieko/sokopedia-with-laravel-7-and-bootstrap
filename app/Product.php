@@ -16,4 +16,8 @@ class Product extends Model
     public function cart(){
         return $this->hasMany('App\Cart', 'product_id');
     }
+
+    public function history(){
+        return $this->belongsTo('App\History','product_id');
+    }
 }

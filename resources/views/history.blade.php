@@ -3,8 +3,8 @@
 @section('content')  
 
 <div class="list-group">
-@foreach($trans as $temp)
-  <a href="{{ route('transactiondetails', ['id' => $temp->transaction_id]) }}" class="list-group-item list-group-item-action">
+@foreach($history as $temp)
+  <a href="{{ route('transactiondetails', ['id' => $temp->history_id]) }}" class="list-group-item list-group-item-action">
   {{$temp->created_at}}
   </a>
 @endforeach

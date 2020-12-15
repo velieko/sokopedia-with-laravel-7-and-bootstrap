@@ -17,8 +17,8 @@ class HistoryController extends Controller
     public function index()
     {
         //
-        $transaction = \App\Transaction::all();
-        return view('history',['trans'=>$transaction]);
+        $history = \App\History::all();
+        return view('history',['history'=>$history]);
     }
 
     /**

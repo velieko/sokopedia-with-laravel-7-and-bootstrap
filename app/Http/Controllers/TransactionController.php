@@ -15,7 +15,7 @@ class TransactionController extends Controller
     public function index($id)
     {
         //
-        $history = \App\History::where('transaction_id','=',$id);
+        $history = \App\History::where('history_id','=',$id);
         return view('transactiondetails',['history'=>$history]);
     }
 

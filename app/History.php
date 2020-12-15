@@ -14,6 +14,6 @@ class History extends Model
         return $this->belongsTo('App\Transaction');
     }
     public function product(){
-        return $this->hasMany('App\Product', 'product_id');
+        return $this->belongsTo('App\Product', 'history_id');
     }
 }
