@@ -18,6 +18,6 @@ class Product extends Model
     }
 
     public function history(){
-        return $this->belongsTo('App\History','product_id');
+        return $this->hasMany('App\History');
     }
 }

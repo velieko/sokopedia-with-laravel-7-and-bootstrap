@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\History;
 
 class TransactionController extends Controller
 {
@@ -15,8 +16,9 @@ class TransactionController extends Controller
     public function index($id)
     {
         //
-        $history = \App\History::where('history_id','=',$id);
-        return view('transactiondetails',['history'=>$history]);
+        
+        $history = History::find($id);
+        return view('transactiondetails',['history'=> $history]);
     }
 
     /**

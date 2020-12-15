@@ -3,25 +3,13 @@
 @section('content')  
 <div class="container">
 
-        <div class="row">
-            <div class="col-3">
-            @foreach($history as $temp)
-                @foreach($temp->product as $product)
-                <img src="{{ asset('Pictures/'.$product->image) }}" style="width:18rem;">
-                </div>
-                <div class="col-3 mt-4">
-                    <h5>
-                    {{$product->name}}   
-                    </h5>
-                    <p>
-                    IDR {{$product->price}}
-                    </p>
-                </div>
-                @endforeach
-                <p>
-                {{$temp->quantity}}
-                </p>
-            @endforeach
-        </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ asset('Pictures/'.$history->product->image) }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{$history->product->name}}</h5>
+            <p class="card-text">Quantity : {{$history->quantity}}</p>
+            <p class="card-text">Price : IDR. {{ $history->quantity * $history->product->price }}</p>
+        </div>       
     </div>
+</div>
 @endsection 
