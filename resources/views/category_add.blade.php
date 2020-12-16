@@ -2,7 +2,7 @@
 @section('title','$okopedia')
 @section('content')  
 <div class="container">  
-    <h1>Add Product</h1> 
+    <h1>Add Category</h1> 
     <form method="POST" action="/admin/add_category/success">
         {{ csrf_field() }}
         <div class="form-group">
